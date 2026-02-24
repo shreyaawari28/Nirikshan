@@ -1,0 +1,68 @@
+:root {
+  --brand-color: #0B2E83;
+  --brand-navy: #0f2a5f;
+  --background: #ffffff;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --navy: #0f2a5f;
+  --navy-light: #1b3c78;
+  --accent: #1ccad8;
+  --primary: #0f2a5f;
+  --border-light: #e2e8f0;
+  --anomaly-bg: #fef2f2;
+  --anomaly-border: #ef4444;
+  --file-label-bg: #f8fafc;
+  --anomaly-highlight: #fef2f2;
+}
+
+[data-theme='dark'] {
+  --brand-color: #ffffff;;
+  --brand-navy: #ffffff;
+  --background: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --navy: #3b82f6;
+  --file-label-bg: #1e293b;
+  --anomaly-highlight: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-width: 320px;
+  padding: 0;
+  color: var(--text-main);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1:not(.brand-title),
+h2,
+h3,
+h4,
+p,
+span,
+li {
+  color: var(--text-main);
+}
+
+.small-text,
+.muted {
+  color: var(--text-muted);
+}
+
+button {
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-family: inherit;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+}
