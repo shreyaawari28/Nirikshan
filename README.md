@@ -2,51 +2,37 @@
 
 > Observe. Analyze. Decide.
 
-Nirikshan is an automated data intelligence platform that transforms raw CSV files into structured dashboards with built-in data auditing, anomaly detection, statistical analysis, and prioritized insights — without requiring manual configuration or technical expertise.
+Nirikshan is a CSV-based data analysis platform that transforms raw datasets into structured dashboards with automated data auditing, anomaly detection, statistical summaries, and smart chart recommendations.
+
+Upload a CSV file and instantly receive structured analytical insights.
 
 ---
 
 ## 📌 Problem Statement
 
-Traditional data tools:
+Many data tools:
 
 - Require manual chart configuration  
-- Demand technical expertise  
+- Need technical expertise  
 - Do not automatically audit data quality  
-- Do not prioritize critical insights  
-- Delay decision-making due to setup complexity  
+- Do not highlight anomalies clearly  
 
-There remains a significant gap between raw data and actionable intelligence.
+There is often friction between raw CSV data and quick analytical understanding.
 
 ---
 
 ## 💡 Our Solution
 
-Nirikshan introduces an **Automated Insight & Data Audit Engine** that:
+Nirikshan provides:
 
-- Automatically detects schema  
-- Performs built-in data quality auditing  
-- Computes statistical summaries  
-- Detects anomalies using standard deviation logic  
-- Identifies trends and growth patterns  
-- Recommends optimal chart types  
-- Generates ranked, prioritized insights  
+- Automatic schema detection  
+- Data quality auditing  
+- Statistical summaries  
+- Standard deviation–based anomaly detection  
+- Automatic chart type recommendations  
+- Structured insight generation  
 
-Upload → Analyze → Decide.
-
----
-
-## 🏗️ System Architecture
-
-```
-CSV Upload
-    ↓
-FastAPI Analysis Engine
-    ↓
-Insight & Chart Recommendation Engine
-    ↓
-React Dashboard
-```
+**Upload → Analyze → View Results**
 
 ---
 
@@ -54,20 +40,13 @@ React Dashboard
 
 ### Frontend
 - React + Vite  
-- Recharts  
+- Chart.js  
 - Axios  
-- jsPDF + html2canvas  
 
 ### Backend
 - FastAPI  
 - Pandas  
 - NumPy  
-- Modular service-based architecture  
-
-### API
-- Endpoint: `POST /analyze`  
-- Request type: `multipart/form-data`  
-- Response: Structured JSON analytics  
 
 ---
 
@@ -80,138 +59,74 @@ Upload any structured CSV file without predefined schema.
 Detects:
 - Numeric columns  
 - Categorical columns  
-- Datetime columns  
-- Total rows and columns  
+- Total rows  
+- Total columns  
 
 ### 🧪 Data Quality Audit
 Checks:
-- Missing values  
+- Total missing values  
 - Duplicate rows  
-- Data completeness percentage  
+- Basic dataset health score  
 
 ### 📊 Statistical Analysis
-Computes:
+For numeric columns:
 - Mean  
-- Median  
 - Standard deviation  
 - Min / Max  
-- Totals  
+- Range  
 
 ### 🚨 Anomaly Detection
-Flags outliers using statistical thresholds.
+Identifies outliers using a standard deviation threshold.
 
-### 📈 Pattern Detection
-Identifies:
-- Upward/downward trends  
-- Growth percentages  
-- Top contributors  
-- Correlations  
+### 📈 Smart Chart Recommendation
+Automatically suggests:
 
-### 📊 Smart Chart Recommendation
-Automatically selects:
-- Line chart (time + numeric)  
-- Bar chart (category + numeric)  
-- Histogram (numeric only)  
+- Histogram → Numeric columns  
+- Bar Chart → Categorical columns  
+- Grouped Bar → Category + Numeric combinations  
 
 ### 🧠 Insight Generation
-Prioritizes insights by impact.
+Generates structured textual insights such as:
 
-### 📄 PDF Export
-Download a full analysis report in one click.
+- High missing data alerts  
+- High variability detection  
+- Dominant categorical patterns  
+- Anomaly summaries  
 
----
+### 🌗 UI Features
 
-## 📂 Project Structure
-
-```
-Nirikshan/
-│
-├── backend/
-│   ├── main.py
-│   ├── services/
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── src/
-│   ├── components/
-│   └── package.json
-│
-└── README.md
-```
-
----
-
-## 🚀 How to Run
-
-### Backend
-
-```bash
-cd backend
-py -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-Backend URL:
-```
-http://localhost:8000
-```
-
-API Docs:
-```
-http://localhost:8000/docs
-```
-
----
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend URL:
-```
-http://localhost:5173
-```
-
----
-
-## 🏆 Hackathon Alignment
-
-| Criteria | Implementation |
-|----------|---------------|
-| Problem Understanding | Eliminates manual bottlenecks |
-| Technical Implementation | FastAPI + React modular design |
-| Innovation | Observes data before visualizing |
-| Scalability | Stateless processing architecture |
-| UI/UX | Clean dashboard with smart flow |
-| Impact | Government, education, SMB use |
-| Code Quality | Service-layer separation |
+- Corporate SaaS-style layout (Navy + White theme)  
+- Light / Dark mode toggle  
+- Responsive dashboard  
+- Hover interactions on cards  
+- Collapsible chart sections  
+- Loading and empty states  
 
 ---
 
 ## 🏁 Conclusion
 
-Nirikshan transforms raw datasets into decision-ready intelligence instantly.
+Nirikshan reduces the gap between raw CSV data and structured analytical understanding.
 
-It does not just visualize data.
-
-It observes, audits, analyzes, and explains it.
+It automates dataset auditing, statistical summarization, anomaly detection, and chart selection — all within a clean interactive dashboard.
 
 ---
 
 ## 👥 Team
 
-Frontend Development  
-Backend Development  
-System Architecture  
+- Frontend Development  
+- Backend Development  
 
 ---
 
 ## 📜 License
 
-Developed for academic and hackathon purposes.
+Built for academic and hackathon use.
+
+---
+
+## 👩‍💻 Author
+
+**Shreya Awari**
+
+---
