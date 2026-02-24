@@ -24,7 +24,7 @@ Health Check:
 
 ### Home Page
 
-![Nirikshan Home](screenshots/home.png)
+![Nirikshan Home](frontend/Homepage%20UI/home.png)
 
 ---
 
@@ -165,7 +165,6 @@ npm run dev
 - **Tejas Halvankar** - [GitHub](https://github.com/Tejas-H01)
 - **Sujal Patil** - [GitHub](https://github.com/SujalPatil21)
 - **Nihal Mishra** - [GitHub](https://github.com/NihalMishra3009)
-
 
 ---
 
