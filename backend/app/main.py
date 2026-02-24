@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 from typing import Dict
 
 
+import numpy as np
 import pandas as pd
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -37,6 +38,7 @@ class DashboardChart(BaseModel):
     chart_type: str
     columns: list[str]
     reason: str
+    chart_data: dict[str, list[float | str]] | None = None
 
 
 class DashboardAnomalyItem(BaseModel):
@@ -213,7 +215,9 @@ def build_insights(
     return insights
 
 
-def build_chart_suggestions(column_types: Dict[str, str]) -> list[Dict[str, object]]:
+def build_chart_suggestions(
+    column_types: Dict[str, str], dataframe: pd.DataFrame
+) -> list[Dict[str, object]]:
     suggestions: list[Dict[str, object]] = []
 
     categorical_columns = [
@@ -226,20 +230,44 @@ def build_chart_suggestions(column_types: Dict[str, str]) -> list[Dict[str, obje
 
     # Single-column recommendations
     for column in categorical_columns:
+        category_counts = (
+            dataframe[column].dropna().astype(str).value_counts().head(10)
+        )
+        chart_object: Dict[str, object] = {
+            "chart_type": "bar",
+            "columns": [column],
+            "reason": f"'{column}' is categorical, so a bar chart is suitable.",
+        }
+        chart_object["chart_data"] = {
+            "labels": category_counts.index.tolist(),
+            "values": category_counts.astype(int).tolist(),
+        }
+
         suggestions.append(
-            {
-                "chart_type": "bar",
-                "columns": [column],
-                "reason": f"'{column}' is categorical, so a bar chart is suitable.",
-            }
+            chart_object
         )
     for column in numeric_columns:
-        suggestions.append(
-            {
-                "chart_type": "histogram",
-                "columns": [column],
-                "reason": f"'{column}' is numeric, so a histogram is suitable.",
+        numeric_series = pd.to_numeric(dataframe[column], errors="coerce").dropna()
+        chart_object: Dict[str, object] = {
+            "chart_type": "histogram",
+            "columns": [column],
+            "reason": f"'{column}' is numeric, so a histogram is suitable.",
+        }
+        if not numeric_series.empty:
+            counts, bin_edges = np.histogram(numeric_series, bins=5)
+            labels: list[str] = []
+            for i in range(len(bin_edges) - 1):
+                left_edge = format(float(bin_edges[i]), ".4g")
+                right_edge = format(float(bin_edges[i + 1]), ".4g")
+                labels.append(f"{left_edge}-{right_edge}")
+
+            chart_object["chart_data"] = {
+                "labels": labels,
+                "values": counts.astype(int).tolist(),
             }
+
+        suggestions.append(
+            chart_object
         )
     for column in date_columns:
         suggestions.append(
@@ -289,7 +317,7 @@ def analyze_dataframe(dataframe: pd.DataFrame) -> Dict[str, object]:
         "stats": stats,
         "anomalies": anomalies,
         "insights": build_insights(dataframe, audit, stats, anomalies),
-        "chart_suggestions": build_chart_suggestions(column_types),
+        "chart_suggestions": build_chart_suggestions(column_types, dataframe),
     }
 
 
