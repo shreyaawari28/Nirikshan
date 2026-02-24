@@ -1,72 +1,72 @@
-# ?? Nirikshan - Smart Data Observation Platform
+# Nirikshan - Smart Data Observation Platform
 
-Nirikshan is an intelligent CSV analysis web application that helps you observe, audit, and analyze datasets instantly.  
+Nirikshan is an intelligent CSV analysis web application that helps you observe, audit, and analyze datasets instantly.
 It performs automatic schema detection, data quality checks, anomaly detection, statistical summaries, and chart recommendations inside a clean, interactive dashboard.
 
 ---
- 
-## ?? Project Video - Click To Open
 
-[![Project Demo](Project.png)](https://www.youtube.com/watch?v=sTBTgqAxueU)
-
----
-
----
-
-## ?? Live Website
+## Live Website
 
 [https://nirikshan-ten.vercel.app](https://nirikshan-ten.vercel.app)
 
 ---
 
-## ?? Live Backend
+## Live Backend
 
 [https://nirikshan-pfxs.onrender.com](https://nirikshan-pfxs.onrender.com)
 
-Health Check:  
+Health Check:
 [https://nirikshan-pfxs.onrender.com/health](https://nirikshan-pfxs.onrender.com/health)
 
 ---
 
-## ? Features
- 
-### ?? CSV Upload and Instant Analysis
+## App Screenshots
+
+### Home Page
+
+![Nirikshan Home](screenshots/home.png)
+
+---
+
+## Features
+
+### CSV Upload and Instant Analysis
 - Upload structured CSV files directly from UI
 - Parse and process data without predefined schema
 - Get dashboard-ready output instantly
 
-### ?? Automatic Schema Detection
+### Automatic Schema Detection
 - Detects numeric, categorical, date-like, and text columns
 - Reports dataset shape (rows and columns)
 - Generates analysis-ready metadata
 
-### ?? Data Quality Audit
+### Data Quality Audit
 - Missing values per column
 - Duplicate row count
 - Overall health score based on completeness
 
-### ?? Statistical Analysis
+### Statistical Analysis
 - Numeric column stats (mean, min, max, total)
 - Distribution-friendly summaries for charting
 - Supports mixed-type CSV datasets
 
-### ?? Anomaly Detection
+### Anomaly Detection
 - Detects outliers using threshold-based logic
 - Reports anomaly count, values, and indices
 - Highlights anomaly-prone columns in dashboard
 
-### ?? Smart Chart Recommendations
+### Smart Chart Recommendations
 - Histogram for numeric columns
 - Bar chart for categorical columns
 - Combination chart suggestions for category + numeric pairs
 
-### ?? Insight Generation
+### Insight Generation
 - High missing-data alerts
 - Variability and spread observations
 - Dominant categorical pattern insights
 - Anomaly summary insights
 
-### ?? Modern, Responsive UI
+### Modern, Responsive UI
 - Light / Dark mode toggle
 - Responsive dashboard layout
 - Collapsible chart sections and summary cards
@@ -74,34 +74,34 @@ Health Check:
 
 ---
 
-## ??? System Architecture
+## System Architecture
 
-### **Frontend (React + Vite + Chart.js)**
+### Frontend (React + Vite + Chart.js)
 - Handles CSV upload flow
 - Renders summary cards, charts, anomalies, and insights
 - Calls backend APIs via Axios
 - Provides responsive and themed dashboard UI
 
-### **Backend (FastAPI + Python)**
+### Backend (FastAPI + Python)
 - Accepts CSV uploads
 - Performs schema detection, audit, stats, and anomaly analysis
 - Generates dashboard response payload
 - Exposes REST endpoints for health and analysis
 
-### **Storage Layer**
+### Storage Layer
 - In-memory processing via Pandas DataFrame
 - No database dependency
 - File uploads handled through multipart form data
 
 ---
 
-## ?? Files Used
+## Files Used
 
-### **Backend**
+### Backend
 - `backend/app/main.py`
 - `backend/requirements.txt`
 
-### **Frontend**
+### Frontend
 - `frontend/src/services/api.js`
 - `frontend/src/components/*`
 - `frontend/src/pages/*`
@@ -110,7 +110,7 @@ Health Check:
 
 ---
 
-## ?? How It Works (Short Overview)
+## How It Works (Short Overview)
 
 1. User uploads CSV file
 2. Frontend sends file to backend `/dashboard` endpoint
@@ -120,7 +120,7 @@ Health Check:
 
 ---
 
-## ?? Installation & Setup
+## Installation and Setup
 
 ```bash
 # Clone repository
@@ -144,14 +144,14 @@ npm run dev
 
 ---
 
-## ?? Deployment
+## Deployment
 
-### **Backend (Render)**
+### Backend (Render)
 - Root Directory: `backend`
 - Build Command: `pip install -r requirements.txt`
 - Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 
-### **Frontend (Vercel)**
+### Frontend (Vercel)
 - Framework Preset: `Vite`
 - Root Directory: `frontend`
 - Build Command: `vite build`
@@ -159,14 +159,16 @@ npm run dev
 
 ---
 
-## ????? Authors
+## Authors
 
 - **Shreya Awari** - [GitHub](https://github.com/shreyaawari28)
+- **Tejas Halvankar** - [GitHub](https://github.com/Tejas-H01)
+- **Sujal Patil** - [GitHub](https://github.com/SujalPatil21)
 - **Nihal Mishra** - [GitHub](https://github.com/NihalMishra3009)
-- **Tejas Halvankar** – [GitHub](https://github.com/Tejas-H01)
-- **Sujal Patil** – [GitHub](https://github.com/SujalPatil21)  
+
+
 ---
 
-## ?? License
+## License
 
 Built for academic and hackathon use.
