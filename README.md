@@ -1,68 +1,68 @@
-# ?? Nirikshan � Smart Data Observation Platform
+# Nirikshan - Smart Data Observation Platform
 
-Nirikshan is an intelligent CSV analysis web application that helps you observe, audit, and analyze datasets instantly.  
+Nirikshan is an intelligent CSV analysis web application that helps you observe, audit, and analyze datasets instantly.
 It performs automatic schema detection, data quality checks, anomaly detection, statistical summaries, and chart recommendations inside a clean, interactive dashboard.
 
-## ??? Home Page UI
+## Home Page UI
 
 ![Nirikshan Home](frontend/Homepage%20UI/home.png)
 
 ---
 
-## ?? Live Website
+## Live Website
 
 [https://nirikshan-ten.vercel.app](https://nirikshan-ten.vercel.app)
 
 ---
 
-## ?? Live Backend
+## Live Backend
 
 [https://nirikshan-pfxs.onrender.com](https://nirikshan-pfxs.onrender.com)
 
-Health Check:  
+Health Check:
 [https://nirikshan-pfxs.onrender.com/health](https://nirikshan-pfxs.onrender.com/health)
 
 ---
 
-## ? Features
+## Features
 
-### ?? Smart CSV Analysis
+### Smart CSV Analysis
 - Upload CSV and get instant analysis
 - Auto-detect column types (numeric, categorical, date-like, text)
 - Structured dashboard-ready response
 
-### ?? Data Quality Audit
+### Data Quality Audit
 - Missing values per column
 - Duplicate row detection
 - Dataset health score
 
-### ?? Statistical Summary
+### Statistical Summary
 - Mean, min, max, total for numeric columns
 - Range-oriented metrics for quick understanding
 
-### ?? Anomaly Detection
+### Anomaly Detection
 - Outlier detection using threshold logic
 - Column-wise anomaly counts and highlights
 
-### ?? Smart Chart Suggestions
+### Smart Chart Suggestions
 - Histogram for numeric data
 - Bar chart for categorical data
 - Category + numeric combo chart suggestions
 
-### ?? Insight Generation
+### Insight Generation
 - Missing data alerts
 - Variability insights
 - Dominant category patterns
 - Anomaly summary notes
 
-### ?? Modern, Responsive UI
+### Modern, Responsive UI
 - Light / Dark mode toggle
 - Responsive dashboard layout
 - Collapsible chart sections and summary cards
 
 ---
 
-## ??? System Architecture
+## System Architecture
 
 ### Frontend (React + Vite + Chart.js)
 - Handles CSV upload flow
@@ -80,7 +80,7 @@ Health Check:
 
 ---
 
-## ?? Files Used
+## Files Used
 
 ### Backend
 - `backend/app/main.py`
@@ -95,7 +95,7 @@ Health Check:
 
 ---
 
-## ?? How It Works (Short Overview)
+## How It Works (Short Overview)
 
 1. User uploads CSV file
 2. Frontend sends file to backend `/dashboard`
@@ -105,7 +105,7 @@ Health Check:
 
 ---
 
-## ?? Installation & Setup
+## Installation and Setup
 
 ```bash
 # Clone repository
@@ -129,7 +129,7 @@ npm run dev
 
 ---
 
-## ?? Deployment
+## Deployment
 
 ### Backend (Render)
 - Root Directory: `backend`
@@ -144,15 +144,15 @@ npm run dev
 
 ---
 
-## ????? Authors
+## Authors
 
-- **Sujal Patil** � [GitHub](https://github.com/SujalPatil21)
-- **Shreya Awari** � [GitHub](https://github.com/shreyaawari28)
-- **Tejas Halvankar** � [GitHub](https://github.com/Tejas-H01)
-- **Nihal Mishra** � [GitHub](https://github.com/NihalMishra3009)
+- **Sujal Patil** - [GitHub](https://github.com/SujalPatil21)
+- **Shreya Awari** - [GitHub](https://github.com/shreyaawari28)
+- **Tejas Halvankar** - [GitHub](https://github.com/Tejas-H01)
+- **Nihal Mishra** - [GitHub](https://github.com/NihalMishra3009)
 
 ---
 
-## ?? License
+## License
 
 Built for academic and hackathon use.
